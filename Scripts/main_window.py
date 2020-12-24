@@ -205,6 +205,14 @@ class MainWindow(tk.Frame):
                         level="warning"
                     )
                     return True
+            elif key == "planets":
+                if len(value) == 1:
+                    MsgBox(
+                        title="Warning",
+                        message=f"Select at least two planets.",
+                        level="warning"
+                    )
+                    return True
                 
     def start_searching(self):
         self.start = True
