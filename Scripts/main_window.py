@@ -216,9 +216,12 @@ class MainWindow(tk.Frame):
         selections = self.get_all_selections()
         if self.has_error(selections):
             return
-        Thread(target=self.searching, daemon=True).start()
+        Thread(
+            target=lambda: self.start_searching(selections), 
+            daemon=True
+        ).start()
             
-    def start_searching(self):
+    def start_searching(self, selections):
         self.text["state"] = "normal"
         self.text.delete("1.0", "end")
         index = 1
