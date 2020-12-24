@@ -22,7 +22,7 @@ python3 ConjunctionFinder.py
 
 ### Notes:
 
-**a)** Windows users may need to write ```python ConjunctionFinder.py``` instead of ```python3 ConjunctionFinder.py```. 
+**a)** Windows users may need to write ```python ConjunctionFinder.py``` instead of ```python3 ConjunctionFinder.py```. Or they can double click the ```run.bat``` file to run the program.
 
 **b)** Windows user may receive a **PermissionError** unless they don't open the cmd as "Administrator". 
 
