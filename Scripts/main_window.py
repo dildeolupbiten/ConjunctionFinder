@@ -35,10 +35,7 @@ class MainWindow(tk.Frame):
         self.start_button = tk.Button(
             master=self.button_frame, 
             text="Start",
-            command=lambda: Thread(
-                target=self.start_searching,
-                daemon=True
-            ).start()
+            command=self.control_selections
         )
         self.start_button.pack(side="left")
         self.stop_button = tk.Button(
@@ -214,11 +211,14 @@ class MainWindow(tk.Frame):
                     )
                     return True
                 
-    def start_searching(self):
+    def control_selections(self):
         self.start = True
         selections = self.get_all_selections()
         if self.has_error(selections):
             return
+        Thread(target=self.searching, daemon=True).start()
+            
+    def start_searching(self):
         self.text["state"] = "normal"
         self.text.delete("1.0", "end")
         index = 1
