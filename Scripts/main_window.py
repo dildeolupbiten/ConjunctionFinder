@@ -84,11 +84,11 @@ class MainWindow(tk.Frame):
                     
     @staticmethod  
     def is_all_signs_same(patterns):
-        return True if len(set(i[1] for i in patterns)) == 1 else False
+        return len(set(i[1] for i in patterns)) == 1
 
     @staticmethod
     def is_in_signs(patterns, signs):
-        return True if patterns[0][1] in signs else False
+        return patterns[0][1] in signs
 
     @staticmethod
     def is_conjunction(patterns, orb):
